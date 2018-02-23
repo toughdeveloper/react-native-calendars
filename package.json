@@ -1,9 +1,10 @@
 {
   "name": "react-native-calendars",
   "version": "1.17.2",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "description": "React Native Calendar Components",
   "scripts": {
+    "build": "babel src --plugins transform-class-properties,transform-react-jsx,transform-object-rest-spread --out-dir dist",
     "test": "jasmine src/*.spec.js && npm run lint",
     "lint": "eslint src/ example/src"
   },
@@ -17,12 +18,16 @@
   "author": "Wix.com",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "prop-types": "^15.5.10",
     "xdate": "^0.8.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.0",
     "jasmine": "^2.5.2",
     "react": "16.0.0-alpha.12",
