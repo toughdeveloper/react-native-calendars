@@ -1,4 +1,10 @@
-export default function platformStyles(appStyle) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = platformStyles;
+function platformStyles(appStyle) {
   return {
     knob: {
       width: 38,

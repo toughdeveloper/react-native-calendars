@@ -1,38 +1,45 @@
-import { Platform } from 'react-native';
+'use strict';
 
-export const foregroundColor = '#ffffff';
-export const backgroundColor = '#f4f4f4';
-export const separatorColor = '#e8e9ec';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.agendaKnobColor = exports.agendaTodayColor = exports.agendaDayNumColor = exports.agendaDayTextColor = exports.monthTextColor = exports.arrowColor = exports.selectedDotColor = exports.dotColor = exports.textDisabledColor = exports.dayTextColor = exports.todayTextColor = exports.selectedDayTextColor = exports.selectedDayBackgroundColor = exports.textSectionTitleColor = exports.calendarBackground = exports.textDayHeaderFontSize = exports.textMonthFontSize = exports.textDayFontSize = exports.textDayHeaderFontFamily = exports.textMonthFontFamily = exports.textDayFontFamily = exports.textSecondaryColor = exports.textLinkColor = exports.textColor = exports.textDefaultColor = exports.failedColor = exports.processingColor = exports.processedColor = exports.separatorColor = exports.backgroundColor = exports.foregroundColor = undefined;
 
-export const processedColor = '#a7e0a3';
-export const processingColor = '#ffce5c';
-export const failedColor = 'rgba(246, 126, 126,1)';
+var _reactNative = require('react-native');
 
-export const textDefaultColor = '#2d4150';
-export const textColor = '#43515c';
-export const textLinkColor = '#00adf5';
-export const textSecondaryColor = '#7a92a5';
+var foregroundColor = exports.foregroundColor = '#ffffff';
+var backgroundColor = exports.backgroundColor = '#f4f4f4';
+var separatorColor = exports.separatorColor = '#e8e9ec';
 
-export const textDayFontFamily = 'System';
-export const textMonthFontFamily = 'System';
-export const textDayHeaderFontFamily = 'System';
+var processedColor = exports.processedColor = '#a7e0a3';
+var processingColor = exports.processingColor = '#ffce5c';
+var failedColor = exports.failedColor = 'rgba(246, 126, 126,1)';
 
-export const textDayFontSize = 16;
-export const textMonthFontSize = 16;
-export const textDayHeaderFontSize = 13;
+var textDefaultColor = exports.textDefaultColor = '#2d4150';
+var textColor = exports.textColor = '#43515c';
+var textLinkColor = exports.textLinkColor = '#00adf5';
+var textSecondaryColor = exports.textSecondaryColor = '#7a92a5';
 
-export const calendarBackground = foregroundColor;
-export const textSectionTitleColor = '#b6c1cd';
-export const selectedDayBackgroundColor = textLinkColor;
-export const selectedDayTextColor = foregroundColor;
-export const todayTextColor = textLinkColor;
-export const dayTextColor = textDefaultColor;
-export const textDisabledColor = '#d9e1e8';
-export const dotColor = textLinkColor;
-export const selectedDotColor = foregroundColor;
-export const arrowColor = textLinkColor;
-export const monthTextColor = textDefaultColor;
-export const agendaDayTextColor = '#7a92a5';
-export const agendaDayNumColor = '#7a92a5';
-export const agendaTodayColor = textLinkColor;
-export const agendaKnobColor = Platform.OS === 'ios' ? '#f2F4f5' : '#4ac4f7';
+var textDayFontFamily = exports.textDayFontFamily = 'System';
+var textMonthFontFamily = exports.textMonthFontFamily = 'System';
+var textDayHeaderFontFamily = exports.textDayHeaderFontFamily = 'System';
+
+var textDayFontSize = exports.textDayFontSize = 16;
+var textMonthFontSize = exports.textMonthFontSize = 16;
+var textDayHeaderFontSize = exports.textDayHeaderFontSize = 13;
+
+var calendarBackground = exports.calendarBackground = foregroundColor;
+var textSectionTitleColor = exports.textSectionTitleColor = '#b6c1cd';
+var selectedDayBackgroundColor = exports.selectedDayBackgroundColor = textLinkColor;
+var selectedDayTextColor = exports.selectedDayTextColor = foregroundColor;
+var todayTextColor = exports.todayTextColor = textLinkColor;
+var dayTextColor = exports.dayTextColor = textDefaultColor;
+var textDisabledColor = exports.textDisabledColor = '#d9e1e8';
+var dotColor = exports.dotColor = textLinkColor;
+var selectedDotColor = exports.selectedDotColor = foregroundColor;
+var arrowColor = exports.arrowColor = textLinkColor;
+var monthTextColor = exports.monthTextColor = textDefaultColor;
+var agendaDayTextColor = exports.agendaDayTextColor = '#7a92a5';
+var agendaDayNumColor = exports.agendaDayNumColor = '#7a92a5';
+var agendaTodayColor = exports.agendaTodayColor = textLinkColor;
+var agendaKnobColor = exports.agendaKnobColor = _reactNative.Platform.OS === 'ios' ? '#f2F4f5' : '#4ac4f7';

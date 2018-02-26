@@ -1,4 +1,6 @@
-const XDate = require('xdate');
+'use strict';
+
+var XDate = require('xdate');
 
 function sameMonth(a, b) {
   return a instanceof XDate && b instanceof XDate && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth();
@@ -17,8 +19,8 @@ function isLTE(a, b) {
 }
 
 function fromTo(a, b) {
-  const days = [];
-  let from = +a,
+  var days = [];
+  var from = +a,
       to = +b;
   for (; from <= to; from = new XDate(from, true).addDays(1).getTime()) {
     days.push(new XDate(from, true));
@@ -27,19 +29,21 @@ function fromTo(a, b) {
 }
 
 function month(xd) {
-  const year = xd.getFullYear(),
-        month = xd.getMonth();
-  const days = new Date(year, month + 1, 0).getDate();
+  var year = xd.getFullYear(),
+      month = xd.getMonth();
+  var days = new Date(year, month + 1, 0).getDate();
 
-  const firstDay = new XDate(year, month, 1, 0, 0, 0, true);
-  const lastDay = new XDate(year, month, days, 0, 0, 0, true);
+  var firstDay = new XDate(year, month, 1, 0, 0, 0, true);
+  var lastDay = new XDate(year, month, days, 0, 0, 0, true);
 
   return fromTo(firstDay, lastDay);
 }
 
-function weekDayNames(firstDayOfWeek = 0) {
-  let weekDaysNames = XDate.locales[XDate.defaultLocale].dayNamesShort;
-  const dayShift = firstDayOfWeek % 7;
+function weekDayNames() {
+  var firstDayOfWeek = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+  var weekDaysNames = XDate.locales[XDate.defaultLocale].dayNamesShort;
+  var dayShift = firstDayOfWeek % 7;
   if (dayShift) {
     weekDaysNames = weekDaysNames.slice(dayShift).concat(weekDaysNames.slice(0, dayShift));
   }
@@ -47,22 +51,22 @@ function weekDayNames(firstDayOfWeek = 0) {
 }
 
 function page(xd, firstDayOfWeek) {
-  const days = month(xd);
-  let before = [],
+  var days = month(xd);
+  var before = [],
       after = [];
 
-  const fdow = (7 + firstDayOfWeek) % 7 || 7;
-  const ldow = (fdow + 6) % 7;
+  var fdow = (7 + firstDayOfWeek) % 7 || 7;
+  var ldow = (fdow + 6) % 7;
 
   firstDayOfWeek = firstDayOfWeek || 0;
 
-  const from = days[0].clone();
+  var from = days[0].clone();
   if (from.getDay() !== fdow) {
     from.addDays(-(from.getDay() + 7 - fdow) % 7);
   }
 
-  const to = days[days.length - 1].clone();
-  const day = to.getDay();
+  var to = days[days.length - 1].clone();
+  var day = to.getDay();
   if (day !== ldow) {
     to.addDays((ldow + 7 - day) % 7);
   }
@@ -79,12 +83,12 @@ function page(xd, firstDayOfWeek) {
 }
 
 module.exports = {
-  weekDayNames,
-  sameMonth,
-  sameDate,
-  month,
-  page,
-  fromTo,
-  isLTE,
-  isGTE
+  weekDayNames: weekDayNames,
+  sameMonth: sameMonth,
+  sameDate: sameDate,
+  month: month,
+  page: page,
+  fromTo: fromTo,
+  isLTE: isLTE,
+  isGTE: isGTE
 };
